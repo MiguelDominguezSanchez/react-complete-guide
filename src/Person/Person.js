@@ -9,8 +9,13 @@ import './Person.css'
 // var person = function () {}
 
 const person = (props) => {
+	const style = {
+		'@media (minWidth: 500px)': {
+			width: '450px',
+		},
+	}
 	return (
-		<div className='Person'>
+		<div className='Person' style={style}>
 			<p onClick={props.click}>
 				I'm {props.name} and I am {props.age} years old!
 			</p>
