@@ -1,22 +1,22 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import './App.css'
+import classes from './App.css'
 // import Radium, { StyleRoot } from 'radium'
 import Person from './Person/Person'
 
-const StyledButton = styled.button`
-	background-color: ${(props) => (props.alt ? 'red' : 'green')};
-	color: white;
-	font: inherit;
-	border: 1px solid blue;
-	padding: 8px;
-	cursor: pointer;
+// const StyledButton = styled.button`
+// 	background-color: ${(props) => (props.alt ? 'red' : 'green')};
+// 	color: white;
+// 	font: inherit;
+// 	border: 1px solid blue;
+// 	padding: 8px;
+// 	cursor: pointer;
 
-	&:hover {
-		background-color: ${(props) => (props.alt ? 'salmon' : 'lightgreen')};
-		color: black;
-	}
-`
+// 	&:hover {
+// 		background-color: ${(props) => (props.alt ? 'salmon' : 'lightgreen')};
+// 		color: black;
+// 	}
+// `
 
 class App extends Component {
 	state = {
@@ -61,20 +61,24 @@ class App extends Component {
 	}
 
 	render() {
-		const style = {
-			backgroundColor: 'green',
-			color: 'white',
-			font: 'inherit',
-			border: '1px solid blue',
-			padding: '8px',
-			cursor: 'pointer',
-			':hover': {
-				backgroundColor: 'lightgreen',
-				color: 'black',
-			},
-		}
+		// const style = {
+		// 	backgroundColor: 'green',
+		// 	color: 'white',
+		// 	font: 'inherit',
+		// 	border: '1px solid blue',
+		// 	padding: '8px',
+		// 	cursor: 'pointer',
+		// 	':hover': {
+		// 		backgroundColor: 'lightgreen',
+		// 		color: 'black',
+		// 	},
+		// }
 
 		let persons = null
+
+		// let btnClass = [classes.Button]
+
+		let btnClass = ''
 
 		if (this.state.showPersons) {
 			persons = (
@@ -98,23 +102,27 @@ class App extends Component {
 			// 	backgroundColor: 'salmon',
 			// 	color: 'black',
 			// }
+
+			// btnClass.push(classes.Red)
+			btnClass = classes.Red
 		}
 
 		// let classes = ['red', 'bold'].join(' ')
 		// "red bold"
-		const classes = []
+
+		const assignClasses = []
 		if (this.state.persons.length <= 2) {
-			classes.push('red') // classes = ['red']
+			assignClasses.push(classes.red) // classes = ['red']
 		}
 		if (this.state.persons.length <= 1) {
-			classes.push('bold') // classes = ['red', 'bold']
+			assignClasses.push(classes.bold) // classes = ['red', 'bold']
 		}
 
 		return (
 			// <StyleRoot>
-			<div className='App'>
+			<div className={classes.App}>
 				<h1>Hi, I'm a React App</h1>
-				<p className={classes.join(' ')}>This is really working!</p>
+				<p className={assignClasses.join(' ')}>This is really working!</p>
 				{/* <button style={style} onClick={this.togglePersonsHandler}>
 					Toggle Persons
 				</button> */}
@@ -124,7 +132,16 @@ class App extends Component {
 				>
 					Toggle Persons
 				</StyledButton> */}
-				<button className='button' onClick={this.togglePersonsHandler}>
+				{/* <button className={classes.Button} onClick={this.togglePersonsHandler}>
+					Toggle Persons
+				</button> */}
+				{/* <button
+					className={btnClass.join(' ')}
+					onClick={this.togglePersonsHandler}
+				>
+					Toggle Persons
+				</button> */}
+				<button className={btnClass} onClick={this.togglePersonsHandler}>
 					Toggle Persons
 				</button>
 				{persons}
