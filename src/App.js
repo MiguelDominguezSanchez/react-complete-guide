@@ -118,12 +118,15 @@ class App extends Component {
 				{/* <button style={style} onClick={this.togglePersonsHandler}>
 					Toggle Persons
 				</button> */}
-				<StyledButton
+				{/* <StyledButton
 					alt={this.state.showPersons}
 					onClick={this.togglePersonsHandler}
 				>
 					Toggle Persons
-				</StyledButton>
+				</StyledButton> */}
+				<button className='button' onClick={this.togglePersonsHandler}>
+					Toggle Persons
+				</button>
 				{persons}
 			</div>
 			// </StyleRoot>
