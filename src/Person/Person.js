@@ -22,11 +22,11 @@ const StyledDiv = styled.div`
 // var person = function () {}
 
 const person = (props) => {
-	const style = {
-		'@media (minWidth: 500px)': {
-			width: '450px',
-		},
-	}
+	// const style = {
+	// 	'@media (minWidth: 500px)': {
+	// 		width: '450px',
+	// 	},
+	// }
 	return (
 		// < div className='Person' style={style}>
 		<StyledDiv>
