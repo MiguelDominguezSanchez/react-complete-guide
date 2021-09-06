@@ -61,18 +61,18 @@ class App extends Component {
 	}
 
 	render() {
-		// const style = {
-		// 	backgroundColor: 'green',
-		// 	color: 'white',
-		// 	font: 'inherit',
-		// 	border: '1px solid blue',
-		// 	padding: '8px',
-		// 	cursor: 'pointer',
-		// 	':hover': {
-		// 		backgroundColor: 'lightgreen',
-		// 		color: 'black',
-		// 	},
-		// }
+		const style = {
+			backgroundColor: 'green',
+			color: 'white',
+			font: 'inherit',
+			border: '1px solid blue',
+			padding: '8px',
+			cursor: 'pointer',
+			':hover': {
+				backgroundColor: 'lightgreen',
+				color: 'black',
+			},
+		}
 
 		let persons = null
 
@@ -96,6 +96,8 @@ class App extends Component {
 					})}
 				</div>
 			)
+
+			style.backgroundColor = 'red'
 
 			// style.backgroundColor = 'red'
 			// style[':hover'] = {
@@ -123,9 +125,9 @@ class App extends Component {
 			<div className={classes.App}>
 				<h1>Hi, I'm a React App</h1>
 				<p className={assignClasses.join(' ')}>This is really working!</p>
-				{/* <button style={style} onClick={this.togglePersonsHandler}>
+				<button style={style} onClick={this.togglePersonsHandler}>
 					Toggle Persons
-				</button> */}
+				</button>
 				{/* <StyledButton
 					alt={this.state.showPersons}
 					onClick={this.togglePersonsHandler}
@@ -141,9 +143,9 @@ class App extends Component {
 				>
 					Toggle Persons
 				</button> */}
-				<button className={btnClass} onClick={this.togglePersonsHandler}>
+				{/* <button className={btnClass} onClick={this.togglePersonsHandler}>
 					Toggle Persons
-				</button>
+				</button> */}
 				{persons}
 			</div>
 			// </StyleRoot>
